@@ -15,8 +15,8 @@ export const NavBar = () => {
            </Link>
 
             <Link to= "/About">Blog</Link>
-           <a href='https://github.com/Sunandhit-Gupta/Herbi-Cure/tree/main#readme'> Readme</a>
-            <a href='https://github.com/Sunandhit-Gupta/Herbi-Cure'>Github</a>
+           <a href='https://github.com/Gosling-dude/HerbiGPT---Your-Holistic-Wellness-Guide/blob/main/README.md'> Readme</a>
+            <a href='https://github.com/Gosling-dude/HerbiGPT---Your-Holistic-Wellness-Guide.git'>Github</a>
         </div>
         <div className='right_nav_content'>
 
@@ -26,9 +26,9 @@ export const NavBar = () => {
             </div>
 
             <div className='right_nav_links'>
-            <a href='https://github.com/Sunandhit-Gupta'>Models</a>
-            <a href='https://github.com/Sunandhit-Gupta'> Sign in</a>
-            <a href='https://github.com/Sunandhit-Gupta'><button>Downloads</button></a>
+            <a href='https://github.com/Gosling-dude'>Models</a>
+            <a href='https://github.com/Gosling-dude'> Sign in</a>
+            <a href='https://github.com/Gosling-dude'><button>Downloads</button></a>
             </div>
         </div>
     </div>
