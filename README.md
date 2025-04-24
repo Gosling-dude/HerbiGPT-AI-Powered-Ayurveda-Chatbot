@@ -1,4 +1,4 @@
-Deployed Link: https://herbi-cure.netlify.app/
+Deployed Link: https://herbigpt.netlify.app/
 
 # Herbi Cure
 
@@ -40,10 +40,4 @@ To deploy this project run
   npm install puppeteer
   npm start
 ```
-
-
-## Authors
-
-- [@sunandhit](https://github.com/Sunandhit-Gupta)
-- [@himanshu](https://github.com/Himanshu-Dania)
 
