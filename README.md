@@ -1,6 +1,7 @@
-Deployed Link: https://herbi-cure.netlify.app/
+Deployed Link: https://herbigpt.netlify.app/
 
-# Herbi Cure
+# HerbiGPT-Your-Holistic-Wellness-Guide
+
 
 
 Herbi Cure is an intelligent chatbot that leverages advanced AI technology known as RAG (Retrieval Augmented Generation) to provide accurate responses to your queries about Ayurveda. Our model has been trained on an extensive database of over 2500+ articles and 30+ certified books on Ayurveda. This has been done through OnDemand's API.
@@ -40,10 +41,4 @@ To deploy this project run
   npm install puppeteer
   npm start
 ```
-
-
-## Authors
-
-- [@sunandhit](https://github.com/Sunandhit-Gupta)
-- [@himanshu](https://github.com/Himanshu-Dania)
 
