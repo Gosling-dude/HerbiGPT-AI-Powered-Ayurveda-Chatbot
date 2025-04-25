@@ -77,8 +77,8 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ## 📜 **License**
 MIT License — Feel free to use, modify, and share.
-
 ## 💬 **Contact**
-Feel free to connect with me via LinkedIn or drop a message if you'd like to collaborate!
+Feel free to connect with me via [LinkedIn](https://www.linkedin.com/in/sumit-chauhan-006399257/) or drop a message if you'd like to collaborate!
+
 
 ## Owener - **Sumit Chauhan**
