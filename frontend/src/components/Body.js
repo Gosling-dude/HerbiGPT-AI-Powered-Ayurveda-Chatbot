@@ -208,7 +208,7 @@ export const Body = () => {
       <FallingLeaves />
       <div className='lama_img_body'><img src={Mascot} alt='Mascot' /></div>
       {/* <div id='heading'><h3 className='glow'>Herbi Cure <span>- Ayurvedic Answers Anytime</span> </h3></div> */}
-      <h1 className='glow'>Herbi-Cure <span>An Ayurveda Companion</span></h1>
+      <h1 className='glow'>HerbiGPT <span>Your Holistic Wellness Guide</span></h1>
       <div id='connect_search'>
         <div className='output' ref={outputRef}>
           <CircleScrollList onTextClick={handleTextClick} disable={isLoading || isProcessing} />
