@@ -1,44 +1,84 @@
-Deployed Link: https://herbigpt.netlify.app/
+# 🌿 HerbiGPT - Your Holistic Wellness Guide
 
-# HerbiGPT-Your-Holistic-Wellness-Guide
+[🔗 have a look](https://herbigpt.netlify.app/)
 
+HerbiGPT is an AI-powered chatbot tailored for Ayurveda enthusiasts. Using advanced **RAG (Retrieval Augmented Generation)** techniques, it provides accurate and reliable responses about Ayurvedic practices, herbs, remedies, and lifestyle guidance. Whether you're a seasoned practitioner or just curious about holistic health, **HerbiGPT** is your go-to companion for natural wellness.
 
+---
 
-Herbi Cure is an intelligent chatbot that leverages advanced AI technology known as RAG (Retrieval Augmented Generation) to provide accurate responses to your queries about Ayurveda. Our model has been trained on an extensive database of over 2500+ articles and 30+ certified books on Ayurveda. This has been done through OnDemand's API.
+## ✨ Features
 
-Whether you're a seasoned practitioner or a curious beginner, Herbi Cure is here to answer your questions and guide you on your journey to holistic health.
+✅ **Comprehensive Knowledge Base**  
+Trained on 2500+ Ayurveda articles and 30+ certified books via OnDemand’s API, offering rich and accurate information about:
+- Medicinal herbs
+- Dietary plans
+- Mental wellness
+- Yoga practices
+- Lifestyle suggestions
 
+✅ **Holistic Health Support**  
+More than symptom treatment — HerbiGPT focuses on balance and well-being across body, mind, and spirit.
 
+✅ **Easy-to-Use Interface**  
+Clean and minimal UI built in React, ensuring users can access Ayurvedic advice without confusion or clutter.
 
-## Features
+✅ **AI-Powered Intelligence**  
+Utilizes Retrieval Augmented Generation (RAG) and modern LLM pipelines for contextual, real-time answers.
 
-1. **Comprehensive Knowledge Base**: With access to information from 2500+ articles and 30+ certified books, Herbi Cure offers a wealth of knowledge at your fingertips. Whether you have questions about specific herbs, dietary recommendations, or yoga practices, our chatbot provides detailed and reliable answers.
+---
 
-2. **User-Friendly Interface**: Navigating the world of Ayurveda can be overwhelming, but Herbi Cure makes it easy. Our user-friendly interface ensures that you can quickly find the information you need, whether you're looking for remedies for common ailments or tips for maintaining a balanced lifestyle.
+## 🛠 Tech Stack
 
-3. **Holistic Health Guidance**: Ayurveda is not just about treating symptoms; it's about achieving balance in all aspects of life. Herbi Cure offers guidance on a wide range of topics, including diet, exercise, mental health, and spiritual well-being.
-# Tech Stack
+| Frontend        | Backend         | AI / ML           | Scraping & Tools     |
+|-----------------|------------------|-------------------|----------------------|
+| React           | Express.js       | Python            | BeautifulSoup        |
+| JavaScript      | LangChain        | Scikit-Learn      | Tesseract OCR        |
+| HTML/CSS        | OnDemand API     |                   | Puppeteer (optional) |
 
-- <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="20"> **React**
-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" width="20"> **Express.js**
-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" width="20"> **JavaScript**
-- <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="20"> **Python**
-- <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" width="20"> **Scikit-Learn**
-- <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/LangChain_logo.png" width="20"> **LangChain**
-- **OnDemand Chat Plugins API**
-- **BeautifulSoup**
-- **Tesseract - OCR**
+---
 
+## 🚀 Local Development & Deployment
 
-## Deployment
+### 📁 Clone the repository
 
-To deploy this project run
+git clone https://github.com/Gosling-dude/HerbiGPT---Your-Holistic-Wellness-Guide.git
+cd HerbiGPT---Your-Holistic-Wellness-Guide
+### 📦 **Backend Setup**
+cd backend
+npm install
+node server.js
+The backend will run on http://localhost:5000
 
-```bash
-  npm install react
-  npm instal express
-  npm install tesseract
-  npm install puppeteer
-  npm start
-```
+### 💻 **Frontend Setup**
+cd ../frontend
+npm install
+npm start
+The frontend will run on http://localhost:3000
 
+## 🌍 **Deployment Instructions**
+🔸 **Frontend (Netlify)**
+Set base directory as frontend
+
+Build command: npm run build
+
+Publish directory: frontend/build
+
+🔸 **Backend (Render)**
+Create a new web service
+
+Set root directory to /backend
+
+Use node server.js as the start command
+
+Ensure environment supports Node.js + required dependencies
+
+## 🙌 **Contributing**
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## 📜 **License**
+MIT License — Feel free to use, modify, and share.
+
+## 💬 **Contact**
+Feel free to connect with me via LinkedIn or drop a message if you'd like to collaborate!
+
+## Owener - **Sumit Chauhan**
