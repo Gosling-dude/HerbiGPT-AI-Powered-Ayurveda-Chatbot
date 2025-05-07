@@ -39,5 +39,3 @@ Want to dive into AI? Here are some starting points:
 4. Read foundational books like *Artificial Intelligence: A Modern Approach*
 
 ---
-
-*Made with ❤️ for tech enthusiasts.*
