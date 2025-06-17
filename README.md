@@ -40,27 +40,33 @@ Utilizes Retrieval Augmented Generation (RAG) and modern LLM pipelines for conte
 ## 🚀 Local Development & Deployment
 
 ### 📁 Clone the repository
-
+```bash
 git clone https://github.com/Gosling-dude/HerbiGPT---Your-Holistic-Wellness-Guide.git
-
 cd HerbiGPT---Your-Holistic-Wellness-Guide
+
+```
+---
+
 ### 📦 **Backend Setup**
+
+```bash
 cd backend
-
 npm install
-
 node server.js
-
+```
 The backend will run on http://localhost:5000
 
+---
+
 ### 💻 **Frontend Setup**
+```bash
 cd ../frontend
-
 npm install
-
 npm start
-
+```
 The frontend will run on http://localhost:3000
+
+---
 
 ## 🌍 **Deployment Instructions**
 🔸 **Frontend (Netlify)**
