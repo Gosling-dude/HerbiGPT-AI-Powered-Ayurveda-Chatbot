@@ -1,4 +1,4 @@
-# 🌿 HerbiGPT - Your Holistic Wellness Guide
+# 🌿 HerbiGPT - AI-Powered Ayurveda Chatbot
 
 [🔗 have a look](https://herbigpt.netlify.app/)
 
