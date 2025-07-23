@@ -2,6 +2,8 @@
 
 Artificial Intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. It is transforming industries, improving user experiences, and unlocking new possibilities across sectors.
 
+
+### this article is just for exploration, nothing rlelvant to the project.
 ## 🤖 Core Fields of AI
 
 - **Machine Learning (ML)**: Algorithms that allow systems to learn from data.
