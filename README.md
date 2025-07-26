@@ -7,8 +7,7 @@ HerbiGPT is an AI-powered chatbot tailored for Ayurveda enthusiasts. Using advan
 ## Some Examples of Data Sources:
 
 ### 🌐 10 Ayurvedic Websites & Blogs
-
-- [Ayurveda & Yoga Center (Chopra Center)](https://chopra.com/ayurveda)  
+ 
 - [Banyan Botanicals Blog](https://www.banyanbotanicals.com/info/ayurvedic-living)  
 - [National Institute of Ayurveda](https://www.nia.nic.in)  
 - [Ayurvedic Institute](https://www.ayurvedicinstitute.org/blog)  
