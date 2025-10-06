@@ -72,11 +72,13 @@ Utilizes Retrieval Augmented Generation (RAG) and modern LLM pipelines for conte
 
 ## 🛠 Tech Stack
 
-| Frontend        | Backend         | AI / ML           | Scraping & Tools     |
-|-----------------|------------------|-------------------|----------------------|
-| React           | Express.js       | Python            | BeautifulSoup        |
-| JavaScript      | LangChain        | Scikit-Learn      | Tesseract OCR        |
-| HTML/CSS        | OnDemand API     |                   
+| Layer              | Technologies & Tools                             |
+|-------------------|--------------------------------------------------|
+| **Frontend**       | React, JavaScript, HTML, CSS                     |
+| **Backend**        | Node.js, Express.js, OnDemand API                |
+| **AI / ML**        | Python, LangChain, Scikit-Learn, **RAG (Retrieval Augmented Generation)** |
+| **Scraping & Tools** | BeautifulSoup, Tesseract OCR                     |
+| **Deployment**     | Netlify (Frontend), Render (Backend)            |
 
 ---
 
@@ -137,4 +139,23 @@ MIT License — Feel free to use, modify, and share.
 Feel free to connect with me via [LinkedIn](https://www.linkedin.com/in/sumit-chauhan-006399257/) or drop a message if you'd like to collaborate!
 
 
-## Owener - **Sumit Chauhan**
+## 👥 Contributors
+
+### 🧠 **Sumit Chauhan**  
+**Role:** Project Lead & AI Integration Engineer  
+**Contributions:**  
+- Designed and implemented the **RAG (Retrieval Augmented Generation)** system  
+- Collected and curated large-scale **Ayurvedic datasets**  
+- Integrated AI pipelines with backend architecture  
+- Led system design and overall project coordination  
+
+---
+
+### 💻 **Xaomiung Codie**  
+**Role:** Frontend Developer & System Integrator  
+**Contributions:**  
+- Developed an elegant **React-based frontend** for smooth user interaction  
+- Connected **UI queries** to backend AI logic via **Express.js**  
+- Implemented real-time **response rendering** and clean UI display  
+- Enhanced overall user experience and app performance  
+
