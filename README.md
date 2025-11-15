@@ -113,6 +113,29 @@ The frontend will run on http://localhost:3000
 
 ---
 
+### ✅ Quick Run (updated for this repo)
+
+If you just want to run the project locally (backend + frontend) quickly, use these commands from the repository root on Windows PowerShell:
+
+```powershell
+# Install dependencies (first time only)
+cd backend; npm install; cd ../frontend; npm install
+
+# Start backend (from repo root)
+cd backend; node server_groq.js
+
+# In a separate terminal, start frontend
+cd frontend; npm start
+```
+
+Open the frontend at `http://localhost:3000`. The backend API runs at `http://localhost:3001` (health: `/health`, ask: `/ask`).
+
+Notes:
+- The repo includes a local fallback LLM stub for demo responses; real LLM integrations may require API keys and extra configuration.
+- If ports are in use, change the port in `backend/server_groq.js` and restart.
+
+---
+
 ## 🌍 **Deployment Instructions**
 🔸 **Frontend (Netlify)**
 Set base directory as frontend
