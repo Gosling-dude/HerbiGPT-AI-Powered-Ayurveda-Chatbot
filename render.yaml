@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: herbigpt-backend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    rootDir: backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
+      - key: GROQ_API_KEY
+        sync: false
+        description: "Your Groq API Key (Llama-3.1 Chatbot API)"
+      - key: GOOGLE_API_KEY
+        sync: false
+        description: "Your Google Generative AI API Key (Optional for embeddings)"
