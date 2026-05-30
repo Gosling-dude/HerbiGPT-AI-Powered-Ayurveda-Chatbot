@@ -1,0 +1,37 @@
+# Secrets and environment variables
+.env
+backend/.env
+
+# Database files
+db/
+backend/db/
+*.sqlite3
+
+# Processed data and archives
+data_scraping/Processed/
+*.zip
+
+# Node.js dependencies
+node_modules/
+
+# Python cache
+__pycache__/
+
+# Ignore processed data
+data_scraping/Processed/
+
+# Also ignore that zip file
+data_scraping/archive.zip
+
+# Datasets and Processed files
+data_scraping/Processed/
+data_scraping/Ayurveda Dataset/
+data_scraping/archive.zip
+
+# Database files
+db/
+*.sqlite3
+
+# Secrets
+.env
+backend/.env
