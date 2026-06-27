@@ -9,7 +9,6 @@
     "start": "node dist/index.js",
     "dev": "tsx --watch src/index.ts",
     "test": "tsx src/test/e2e.test.ts",
-    "start:legacy": "node server_groq.js",
     "lint": "tsc --noEmit",
     "clean": "rm -rf dist"
   },

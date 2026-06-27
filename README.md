@@ -51,34 +51,36 @@ HerbiGPT is an AI-powered chatbot tailored for Ayurveda enthusiasts. Using advan
 
 ## ✨ Features
 
-✅ **Comprehensive Knowledge Base**  
-Trained on 2500+ Ayurveda articles and 30+ certified books via OnDemand’s API, offering rich and accurate information about:
-- Medicinal herbs
-- Dietary plans
-- Mental wellness
-- Yoga practices
-- Lifestyle suggestions
+✅ **Curated Ayurveda Knowledge Base**  
+A built-in, hand-curated knowledge base derived from classical Ayurvedic texts (Charaka Samhita, Sushruta Samhita, Ashtanga Hridayam, Bhavaprakasha and more) covering:
+- Medicinal herbs (Ashwagandha, Turmeric, Tulsi, Triphala…)
+- Dosha balancing (Vata, Pitta, Kapha)
+- Dietary principles & weight management
+- Daily routines (Dinacharya), Panchakarma & Yoga
 
-✅ **Holistic Health Support**  
-More than symptom treatment — HerbiGPT focuses on balance and well-being across body, mind, and spirit.
+✅ **Retrieval-Augmented Generation (RAG)**  
+Each question first retrieves the most relevant passages from the knowledge base, then feeds them as context to the LLM — producing grounded, source-attributed answers.
 
-✅ **Easy-to-Use Interface**  
-Clean and minimal UI built in React, ensuring users can access Ayurvedic advice without confusion or clutter.
+✅ **Graceful Fallback Mode**  
+No API key? No problem. The backend automatically falls back to high-quality, pre-written responses from the knowledge base, so the app stays fully demoable without any secrets.
 
-✅ **AI-Powered Intelligence**  
-Utilizes Retrieval Augmented Generation (RAG) and modern LLM pipelines for contextual, real-time answers.
+✅ **Clean, Modern UI**  
+A responsive React interface with markdown rendering, glassmorphism, light/dark themes, and a conversational chat experience.
+
+> ℹ️ **Honest note:** the `data_scraping/` folder contains a large raw corpus (scraped articles + book texts) gathered during research. The *running* app currently uses a curated in-memory knowledge base rather than the full scraped corpus. Upgrading to a vector store over the full corpus is on the roadmap (see [Roadmap](#-roadmap)).
 
 ---
 
 ## 🛠 Tech Stack
 
-| Layer              | Technologies & Tools                             |
-|-------------------|--------------------------------------------------|
-| **Frontend**       | React, JavaScript, HTML, CSS                     |
-| **Backend**        | Node.js, Express.js, OnDemand API                |
-| **AI / ML**        | Python, LangChain, Scikit-Learn, **RAG (Retrieval Augmented Generation)** |
-| **Scraping & Tools** | BeautifulSoup, Tesseract OCR                     |
-| **Deployment**     | Netlify (Frontend), Render (Backend)            |
+| Layer              | Technologies & Tools                                          |
+|--------------------|--------------------------------------------------------------|
+| **Frontend**       | React 18, TypeScript, react-markdown, CSS (glassmorphism)     |
+| **Backend**        | Node.js, Express 5, TypeScript, Zod, Helmet, Winston          |
+| **AI / LLM**       | Groq API (Llama 3.1) with a keyword-RAG retrieval layer       |
+| **Architecture**   | MCP-style server orchestration (LLM / Knowledge / Monitoring / Data) |
+| **Data (research)**| Python, BeautifulSoup, OCR — see `data_scraping/`             |
+| **Deployment**     | Netlify (Frontend), Render (Backend)                          |
 
 ---
 
@@ -97,42 +99,52 @@ cd HerbiGPT---Your-Holistic-Wellness-Guide
 ```bash
 cd backend
 npm install
-node server.js
+
+# Configure environment (optional — runs in fallback mode without a key)
+cp .env.example .env
+# then edit .env and set GROQ_API_KEY=... for full LLM responses
+
+# Development (auto-reload):
+npm run dev
+
+# — or — production build + run:
+npm run build
+npm start
 ```
-The backend will run on http://localhost:5000
+The backend runs on **http://localhost:3001** (health: `/health`, ask: `POST /ask`).
 
 ---
 
 ### 💻 **Frontend Setup**
 ```bash
-cd ../frontend
+cd frontend
 npm install
 npm start
 ```
-The frontend will run on http://localhost:3000
+The frontend runs on **http://localhost:3000** and talks to the backend via
+`REACT_APP_API_URL` (already set to `http://localhost:3001` in `frontend/.env.development`).
 
 ---
 
-### ✅ Quick Run (updated for this repo)
-
-If you just want to run the project locally (backend + frontend) quickly, use these commands from the repository root on Windows PowerShell:
+### ✅ Quick Run (Windows PowerShell)
 
 ```powershell
 # Install dependencies (first time only)
-cd backend; npm install; cd ../frontend; npm install
+cd backend; npm install; cd ../frontend; npm install; cd ..
 
-# Start backend (from repo root)
-cd backend; node server_groq.js
+# Terminal 1 — backend
+cd backend; npm run dev
 
-# In a separate terminal, start frontend
+# Terminal 2 — frontend
 cd frontend; npm start
 ```
 
-Open the frontend at `http://localhost:3000`. The backend API runs at `http://localhost:3001` (health: `/health`, ask: `/ask`).
+Open **http://localhost:3000**.
 
-Notes:
-- The repo includes a local fallback LLM stub for demo responses; real LLM integrations may require API keys and extra configuration.
-- If ports are in use, change the port in `backend/server_groq.js` and restart.
+**Environment notes**
+- `GROQ_API_KEY` is **optional**. Without it, the backend answers from the curated knowledge base (fallback mode). With it, you get full Llama-3.1 responses via Groq.
+- The default backend port is `3001` (override with `PORT` in `backend/.env`).
+- **Production frontend:** before running `npm run build`, set `REACT_APP_API_URL` in `frontend/.env.production` to your deployed backend URL. If it is left empty, the built site will call relative paths and fail with *"Failed to fetch."*
 
 ---
 
@@ -145,13 +157,18 @@ Build command: npm run build
 Publish directory: frontend/build
 
 🔸 **Backend (Render)**
-Create a new web service
+Create a new web service (a ready-made `render.yaml` is included).
 
-Set root directory to /backend
+- Root directory: `backend`
+- Build command: `npm install && npm run build`
+- Start command: `npm start`
+- Environment variables: set `NODE_ENV=production`, `HOST=0.0.0.0`, and (optionally) `GROQ_API_KEY`. Set `CORS_ORIGIN` to your Netlify URL.
 
-Use node server.js as the start command
+## 🧭 Roadmap
 
-Ensure environment supports Node.js + required dependencies
+- Replace the keyword retriever with a true vector store (embeddings) over the full `data_scraping/` corpus.
+- Persist multi-turn conversation history.
+- Streaming token responses.
 
 ## 🙌 **Contributing**
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.

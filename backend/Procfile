@@ -1,1 +1,1 @@
-web: node server_groq.js
+web: npm start

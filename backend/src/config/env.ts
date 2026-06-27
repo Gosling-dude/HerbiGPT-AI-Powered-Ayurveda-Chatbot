@@ -8,9 +8,10 @@ const envSchema = z.object({
   CORS_ORIGIN: z.string().default('*'),
   
   // LLM Configuration
-  GROQ_API_KEY: z.string({
-    required_error: "GROQ_API_KEY is required for the LLM chatbot service"
-  }),
+  // Optional: when absent, the backend runs in a built-in fallback mode that
+  // still answers questions from the curated knowledge base (see services/llm.ts).
+  // This keeps the project fully demoable without any API keys.
+  GROQ_API_KEY: z.string().optional(),
   GOOGLE_API_KEY: z.string().optional(),
   
   // Rate Limiting
@@ -44,6 +45,10 @@ export function validateConfig(): void {
   const config = getConfig();
   const warnings: string[] = [];
   
+  if (!config.GROQ_API_KEY) {
+    warnings.push('No GROQ_API_KEY configured. The chatbot will run in fallback mode using the built-in knowledge base. Set GROQ_API_KEY in backend/.env for full LLM responses.');
+  }
+
   if (!config.GOOGLE_API_KEY) {
     warnings.push('No GOOGLE_API_KEY configured. Embeddings / vector search will run in mock/fallback mode.');
   }
