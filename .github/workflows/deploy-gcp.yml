@@ -16,10 +16,32 @@ env:
   CDN_LOAD_BALANCER_NAME: herbigpt-lb
 
 jobs:
+  # The `secrets` context cannot be used in job-level `if:` conditions, so we
+  # gate the deploy jobs on this lightweight job's output instead. When the GCP
+  # secrets are not configured (the default), the deploy jobs are skipped cleanly
+  # rather than failing.
+  check-config:
+    name: Check GCP configuration
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.check.outputs.enabled }}
+    steps:
+      - id: check
+        env:
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        run: |
+          if [ -n "$GCP_PROJECT_ID" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "GCP_PROJECT_ID secret not set — skipping GCP deploy (this is expected if you deploy via Render/Netlify)."
+          fi
+
   deploy-backend:
     name: Build & Deploy Backend to Cloud Run
     runs-on: ubuntu-latest
-    if: "${{ secrets.GCP_PROJECT_ID != '' }}"
+    needs: check-config
+    if: needs.check-config.outputs.enabled == 'true'
     outputs:
       backend_url: ${{ steps.deploy.outputs.url }}
     steps:
@@ -64,9 +86,9 @@ jobs:
 
   deploy-frontend:
     name: Build & Deploy Frontend to GCS & CDN
-    needs: deploy-backend
+    needs: [check-config, deploy-backend]
     runs-on: ubuntu-latest
-    if: "${{ secrets.GCP_PROJECT_ID != '' && needs.deploy-backend.outputs.backend_url != '' }}"
+    if: needs.check-config.outputs.enabled == 'true' && needs.deploy-backend.outputs.backend_url != ''
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
