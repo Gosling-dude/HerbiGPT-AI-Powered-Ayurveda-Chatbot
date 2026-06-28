@@ -199,15 +199,31 @@ function App() {
         {!hasConversation && (
           <>
             <section className="hero">
+              <div className="hero-emblem">
+                <div className="hero-emblem-ring" />
+                <span className="hero-emblem-leaf">🌿</span>
+              </div>
               <div className="hero-badge">
                 <span className="hero-badge-dot" />
                 AI-Powered Ayurveda Assistant
               </div>
-              <h1>HerbiGPT</h1>
+              <h1>
+                Your Holistic
+                <br />
+                Wellness Guide
+              </h1>
               <p className="hero-sub">
                 Ask about herbs, dosha balancing, diet, and lifestyle.
-                Get fast, evidence-based Ayurvedic guidance.
+                Get fast, evidence-based Ayurvedic guidance — grounded in
+                classical texts and powered by modern AI.
               </p>
+              <div className="hero-trust">
+                <span className="hero-trust-item">⚡ Llama&nbsp;3.1 Fast</span>
+                <span className="hero-trust-dot" />
+                <span className="hero-trust-item">📚 RAG over Charaka Samhita</span>
+                <span className="hero-trust-dot" />
+                <span className="hero-trust-item">🔒 No data stored</span>
+              </div>
             </section>
 
             <div className="suggestions">

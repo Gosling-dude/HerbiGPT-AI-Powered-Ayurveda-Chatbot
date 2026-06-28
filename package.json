@@ -1,0 +1,21 @@
+{
+  "name": "herbigpt",
+  "version": "2.0.0",
+  "private": true,
+  "description": "HerbiGPT — AI-Powered Holistic Wellness Guide (Ayurveda chatbot). Monorepo: Express + MCP backend and React frontend.",
+  "scripts": {
+    "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend start",
+    "dev": "concurrently --kill-others-on-fail --names \"backend,frontend\" --prefix-colors \"green,cyan\" \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "start:backend": "npm --prefix backend start",
+    "test:backend": "npm --prefix backend test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

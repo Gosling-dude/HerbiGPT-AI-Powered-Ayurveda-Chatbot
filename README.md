@@ -94,6 +94,28 @@ cd HerbiGPT---Your-Holistic-Wellness-Guide
 ```
 ---
 
+### ⚡ One-Command Run (recommended)
+
+A root `package.json` runs **both** servers together — this avoids the most common
+mistake of starting the frontend without the backend (which shows *"Failed to fetch"*).
+
+```bash
+# From the repo root (first time only):
+npm run install:all      # installs root + backend + frontend deps
+
+# Optional: enable full LLM responses
+cp backend/.env.example backend/.env   # then set GROQ_API_KEY=...
+
+# Start backend (3001) + frontend (3000) together:
+npm run dev
+```
+
+Then open **http://localhost:3000**. Stop both with `Ctrl+C`.
+
+> Prefer separate terminals? Use the manual setup below.
+
+---
+
 ### 📦 **Backend Setup**
 
 ```bash
